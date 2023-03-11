@@ -1,0 +1,137 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background-color:rgb(252, 234, 223);
+    color: rgb(255, 91, 91);
+}
+
+.accordeon {
+    margin: 0 auto;
+    max-width: 60em;
+}
+
+.accordeon h1 {
+    margin: 0.5em;
+}
+
+.item {
+    border-top: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+}
+
+.accordeon:hover .item {
+    color: rgb(151, 59, 57);
+}
+
+.item:has(input[type="radio"]:checked) .title{
+    color: rgb(151, 59, 57);
+}
+
+.item:hover .content, 
+.item:has(input[type="radio"]:checked) .content {
+    height: auto;
+    max-height: 100em;
+}
+
+.item:hover .content img, 
+.item:has(input[type="radio"]:checked) .content img{
+    height: 300px;
+    max-height: 300px;
+}
+
+.content img {
+    height: 100px;
+    max-height: 100px;
+    transition: max-height 0.6s ease;
+}
+
+.item:has(input[type="radio"]:active) .title {
+    color: rgb(255, 91, 91);
+}
+
+.item .title h2 {
+    flex-grow: 1;
+    font-weight: 300;
+}
+ 
+.item:has(input[type="radio"]:checked) .title i {
+    transform: rotate(45deg);
+}
+
+.accordeon:hover .item .title i {
+    display: flex;
+}
+
+.item .title i {
+    transition: transform 1s ease;
+    flex-shrink: 1;
+    margin-left: 1em;
+    display: none;
+}
+
+.item input[type="radio"] {
+    display: none;
+}
+
+.title {
+    padding: 0.5em;
+    text-align: justify;
+    display: flex;
+}
+
+.content {
+    overflow: hidden;
+    height: 0;
+    max-height: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    transition: max-height 2s ease;
+}
+
+.content img { 
+    margin: 0 auto;
+    padding: 1rem;
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    /* Mobile */
+    .accordeon {
+        width: 95%;
+    }
+    h1 {
+        font-size: 17pt;
+    }
+    .title {
+        font-size: 15pt;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* Tablet */
+    .accordeon {
+        width: 70%;
+    }
+    h1 {
+        font-size: 19pt;
+    }
+    .title {
+        font-size: 17pt;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* Desktop */
+    .accordeon {
+        width: 60%;
+    }
+    h1 {
+        font-size: 21pt;
+    }
+    .title {
+        font-size: 19pt;
+    }
+}
