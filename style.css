@@ -43,10 +43,16 @@ html, body {
     height: 100px;
     max-height: 100px;
     transition: max-height 0.6s ease;
+    filter: blur(0);
 }
 
 .item:has(input[type="radio"]:active) .title {
     color: rgb(255, 91, 91);
+}
+
+.item:has(input[type="radio"]:active) .mem {
+    transition: opacity 0.2s ease-in-out;
+    filter: blur(3px)
 }
 
 .item .title h2 {
@@ -97,20 +103,20 @@ html, body {
     display: block;
 }
 
-@media screen and (max-width: 600px) {
-    /* Mobile */
+@media only screen and (min-width: 1025px) {
+    /* Desktop */
     .accordeon {
-        width: 95%;
+        width: 60%;
     }
     h1 {
-        font-size: 17pt;
+        font-size: 21pt;
     }
     .title {
-        font-size: 15pt;
+        font-size: 19pt;
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     /* Tablet */
     .accordeon {
         width: 70%;
@@ -123,15 +129,15 @@ html, body {
     }
 }
 
-@media only screen and (min-width: 1200px) {
-    /* Desktop */
+@media (max-width: 767px) {
+    /* Mobile */
     .accordeon {
-        width: 60%;
+        width: 95%;
     }
     h1 {
-        font-size: 21pt;
+        font-size: 17pt;
     }
     .title {
-        font-size: 19pt;
+        font-size: 15pt;
     }
 }
